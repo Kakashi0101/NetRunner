@@ -1,5 +1,7 @@
 # Especificação do Projeto: Netrunner OT
 
+Atualização acadêmica: 01/10/2026. Requisitos planejados, sem aplicação implementada neste repositório. Referência comercial: [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md).
+
 ## 1. Visão geral
 
 A Netrunner OT será uma plataforma web para análise de configurações de equipamentos de rede. O sistema combinará extração estruturada, regras determinísticas, um agente de IA para análise preliminar e revisão humana para produzir relatórios de diagnóstico e recomendações.
@@ -40,6 +42,7 @@ Desenvolver um MVP capaz de receber uma configuração de switch, identificar in
 - Monitoramento em tempo real.
 - Suporte completo a todos os fabricantes e versões.
 - Garantia automática de compatibilidade de toda recomendação.
+- Cobrança automática, integração de pagamentos, API comercial e white-label.
 
 ## 5. Perfis de usuário
 
@@ -78,6 +81,9 @@ Desenvolver um MVP capaz de receber uma configuração de switch, identificar in
 - **RF11:** O sistema deve gerar um relatório consolidado.
 - **RF12:** O sistema deve preservar o histórico das análises.
 - **RF13:** O sistema deve permitir comparar duas configurações do mesmo equipamento em uma evolução futura.
+- **RF14:** O consultor deve poder registrar quantidade de equipamentos e tempo de revisão de cada ciclo, para controle de franquia e apuração de custo. No piloto, o registro poderá ser manual.
+- **RF15:** O sistema deve manter relatórios em rascunho até a conclusão da revisão e liberação explícita do consultor.
+- **RF16:** O sistema deve identificar formatos ou versões não suportados e indicar informação insuficiente quando o arquivo não permitir concluir uma verificação.
 
 ## 7. Requisitos não funcionais
 
@@ -95,7 +101,7 @@ Desenvolver um MVP capaz de receber uma configuração de switch, identificar in
 ## 8. Arquitetura preliminar
 
 ```mermaid
-flowchart LR
+flowchart TD
     UI[Aplicação Web] --> API[API da Plataforma]
     API --> AUTH[Autenticação e Autorização]
     API --> PARSER[Parser de Configuração]
@@ -232,7 +238,7 @@ Cada regra deverá possuir identificador, descrição, severidade padrão, condi
 
 ### Etapa 1
 
-Contexto, especificação, Lean Canvas, missão, visão e valores.
+Contexto, especificação, Lean Canvas, missão, visão, valores e plano de negócios com cenários Lean e ideal, tributos e precificação.
 
 ### Etapa 2
 
@@ -249,3 +255,29 @@ Integração controlada do agente de IA e fluxo de revisão humana.
 ### Etapa 5
 
 Relatórios, comparação de versões, piloto e validação do modelo comercial.
+
+## 17. Alinhamento comercial e critérios de aceite
+
+O MVP atenderá um ambiente por assinatura, com um ciclo mensal. Os limites propostos são de 10 equipamentos e 2 h de revisão no Básico, ou 25 equipamentos e 4 h no Profissional. Um ciclo admite uma configuração por equipamento. O controle de contrato, consumo e cobrança será manual inicialmente. O [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md) contém os preços, premissas financeiras e condições de contratação.
+
+| Capacidade planejada | Critério de aceite do piloto |
+|---|---|
+| Upload e franquia | Registrar cliente, ambiente, ciclo, quantidade e versão da configuração; sinalizar lote acima do contratado |
+| Proteção de segredos | Detectar e bloquear ou mascarar os padrões sensíveis previstos nos arquivos de teste antes de envio à IA; exigir conferência humana |
+| Regras reproduzíveis | Executar pelo menos 20 regras com exemplos positivos, negativos e dados insuficientes |
+| Revisão e liberação | Impedir que cliente visualize relatório em rascunho; registrar revisor, decisão e data |
+| Isolamento | Um cliente não consegue acessar arquivos e relatórios de outro por interface ou API |
+| Limitação da análise | Não deduzir estado operacional, ociosidade real ou backup existente somente pela configuração |
+| Contingência de IA | Registrar falha do provedor e permitir diagnóstico por regras com revisão humana |
+| Controle de custo | Registrar horas de revisão e consumo estimado por ciclo, comparando-os às hipóteses financeiras |
+
+Esses critérios são metas de validação, não testes executados. O piloto deverá ajustar a franquia de horas se não for suficiente para entregar o diagnóstico com qualidade. Excedentes dependem de novo orçamento, mantendo a revisão obrigatória.
+
+## 18. Dependências para operação
+
+- Contratos e autorização de processamento, incluindo política de retenção.
+- Estimativa técnica revisada para implementar o MVP.
+- Ambiente de testes e arquivos sintéticos compatíveis com as versões suportadas.
+- Revisor disponível dentro da capacidade contratada.
+- Validação de custos, preços e enquadramento tributário antes da comercialização.
+- Backup e recuperação testados antes de receber configurações de clientes.

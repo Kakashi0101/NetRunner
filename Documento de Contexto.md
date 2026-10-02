@@ -1,5 +1,7 @@
 # Documento de Contexto: Netrunner OT
 
+Atualização acadêmica: 01/10/2026. Documento alinhado ao [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md). A solução está em planejamento, sem implementação funcional neste repositório.
+
 ## 1. Introdução
 
 A disponibilidade da rede é essencial para a continuidade de processos corporativos e industriais. Pequenas e médias organizações, no entanto, nem sempre possuem especialistas dedicados para revisar configurações, documentar alterações e acompanhar a evolução dos equipamentos.
@@ -113,7 +115,11 @@ As recomendações serão apresentadas como apoio técnico. A aplicação depend
 
 ## 10. Modelo de negócio
 
-As fontes de receita previstas são:
+O lançamento proposto combina assinatura mensal por ambiente, limitada por equipamentos e horas de revisão, com diagnóstico avulso. As hipóteses comerciais são: Básico de R$ 990/mês (até 10 equipamentos e 2 h de revisão), Profissional de R$ 1.990/mês (até 25 equipamentos e 4 h), diagnóstico avulso de R$ 1.490 (até 10 equipamentos e 3 h) e consultoria adicional de R$ 250/h, com contratação mínima de 4 h. Cada assinatura inclui um ciclo mensal. Implantação, viagens e atendimento de emergência exigem orçamento próprio.
+
+São preços acadêmicos a validar com clientes. O [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md) detalha franquias, custos e tributos, com necessidade de recursos de R$ 45.000 no Lean e R$ 160.000 no ideal. As carteiras de 20 e 60 clientes representam cenários estabilizados, não clientes existentes. A expansão dependerá de demanda comprovada e capacidade técnica. O controle comercial será manual no MVP.
+
+As fontes de receita previstas, incluindo possibilidades futuras, são:
 
 - diagnóstico avulso por quantidade e complexidade dos equipamentos;
 - assinatura mensal por equipamento ou ambiente;
@@ -189,6 +195,8 @@ As fontes de receita previstas são:
 
 ### Vantagem competitiva
 
+Os itens abaixo representam diferenciais propostos, ainda sujeitos à validação comercial.
+
 - Foco inicial em redes industriais e switches Cisco Catalyst.
 - Combinação de regras auditáveis, agente de IA e revisão humana.
 - Capacidade de converter achados em projetos de melhoria acompanhados.
@@ -214,3 +222,9 @@ Tornar a Netrunner OT uma plataforma de referência em diagnóstico e melhoria c
 - **Inovação:** utilizar IA e automação de forma controlada.
 - **Padronização:** promover ambientes consistentes e documentados.
 - **Melhoria contínua:** acompanhar a evolução da rede e dos processos.
+
+## 13. Validação do negócio e limites da proposta
+
+O grupo deverá entrevistar potenciais compradores e executar pilotos com dados sintéticos ou autorizados para medir tempo de revisão, retrabalho, custo de processamento e disposição a pagar. Configuração estática não comprova condições em tempo real, como latência, utilização, disponibilidade de backups ou estado físico dos enlaces. Ausência de evidência será registrada como informação insuficiente, sem afirmar que o equipamento apresenta uma falha operacional.
+
+O cenário Lean mantém a exigência de proteção de dados e revisão humana. O cenário ideal amplia capacidade e recursos de operação, sem mudar os limites de responsabilidade do serviço. White-label, API, múltiplos fabricantes e cobrança integrada continuam como possibilidades futuras, fora da receita projetada nesta entrega.

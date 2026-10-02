@@ -1,51 +1,65 @@
 # Netrunner OT
 
-A **Netrunner OT** é uma proposta de plataforma web para diagnóstico, conformidade e melhoria contínua de redes industriais. A solução combina análise automatizada, um agente de inteligência artificial para triagem preliminar e revisão humana especializada.
+A **Netrunner OT** é uma proposta de plataforma web para diagnóstico e melhoria contínua de redes industriais. Combina análise de configurações, regras determinísticas, triagem por inteligência artificial e revisão humana especializada.
 
-> Este repositório contém os artefatos da Etapa 1 do projeto acadêmico.
+> Projeto acadêmico em fase de documentação. O aplicativo ainda não está implementado. Atualização: 01/10/2026.
 
 ## Objetivo
 
-Auxiliar organizações a identificar riscos técnicos e oportunidades de melhoria em configurações de switches, roteadores e outros ativos de rede, entregando relatórios priorizados e apoio consultivo para correção.
+Auxiliar equipes de TI/OT e integradores a identificar riscos e organizar recomendações de melhoria em configurações de rede, com evidências, prioridades, testes e plano de retorno.
 
-## Entregas da Etapa 1
+## Documentação e entregas
 
-- [Documento de Contexto](docs/Documento%20de%20Contexto.md)
-- [Especificação do Projeto](docs/Especificação%20do%20Projeto.md)
-- Lean Canvas, incluído no Documento de Contexto
-- Missão, Visão e Valores, incluídos no Documento de Contexto
+- [Documento de Contexto](Documento%20de%20Contexto.md)
+- [Especificação do Projeto](Especifica%C3%A7%C3%A3o%20do%20Projeto.md)
+- [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md)
+- Lean Canvas, missão, visão e valores: incluídos no Documento de Contexto.
+- [Lean Canvas ilustrado original](lean_canvas_netrunner_ot.png), como referência da concepção inicial. Para escopo e modelo comercial atualizados, consultar os documentos em Markdown.
+- [Memória de cálculo dos cenários](scripts/calcular_cenarios.py)
+
+O Plano de Negócios apresenta cenários Lean e ideal, investimentos, capital de giro, custos e despesas, enquadramento tributário proposto, precificação, resultado mensal, equilíbrio, CAC, ARPU e LTV. Valores financeiros são hipóteses acadêmicas, não cotações ou resultados de operação. As referências aos materiais de aula estão no próprio plano.
 
 ## Escopo inicial do MVP
 
-1. Cadastro do cliente e do ambiente analisado.
-2. Upload manual de uma `running-config` anonimizada.
-3. Extração das principais informações da configuração.
-4. Aplicação de regras técnicas determinísticas.
-5. Triagem preliminar por agente de IA.
-6. Revisão dos achados pelo consultor.
-7. Emissão de relatório com riscos, recomendações e prioridades.
-8. Geração assistida de correções, validações e rollback.
+1. Cadastro do cliente e do ambiente.
+2. Upload manual de configuração anonimizada.
+3. Extração de informações e aplicação de regras técnicas.
+4. Triagem preliminar por IA.
+5. Revisão dos achados pelo consultor.
+6. Liberação do relatório com recomendações e prioridades.
+7. Planejamento assistido de correções, validação e rollback, mediante contratação.
 
-## Estrutura do repositório
+O MVP não aplicará comandos nos equipamentos, não fará monitoramento em tempo real e não terá integração automática de cobrança. Franquias e horas serão controladas manualmente no piloto.
 
-```text
-netrunner-ot/
-├── README.md
-├── .gitignore
-├── LICENSE
-├── docs/
-│   ├── Documento de Contexto.md
-│   └── Especificação do Projeto.md
-├── config/
-│   └── exemplo_anonimizado.txt
-└── src/
-    └── README.md
+## Arquivos do repositório
+
+| Arquivo | Finalidade |
+|---|---|
+| `README.md` | Apresentação e acesso às entregas |
+| `Documento de Contexto.md` | Problema, público, solução e modelo de negócio |
+| `Especificação do Projeto.md` | Escopo, requisitos, arquitetura e critérios de aceite |
+| `Plano de Negócios.md` | Cenários financeiros, tributos e precificação |
+| `lean_canvas_netrunner_ot.png` | Ilustração original do Lean Canvas |
+| `scripts/calcular_cenarios.py` | Reprodução das contas em Python 3 |
+
+## Reprodução dos cálculos
+
+Não é necessário instalar dependências externas:
+
+```bash
+python scripts/calcular_cenarios.py
 ```
 
-## Status
+O script simula cenários estabilizados na referência tributária de 2026. Não substitui apuração contábil e não implementa o aplicativo Netrunner OT.
 
-Etapa 1: definição do contexto, especificação inicial, Lean Canvas e identidade organizacional.
+## Conferência e envio ao Canvas
+
+1. Conferir os três documentos e os links acima na versão publicada do repositório.
+2. No GitHub, acessar **Code → Download ZIP** após a atualização.
+3. Enviar o ZIP completo à atividade correspondente no Canvas, conforme o enunciado.
+
+Não enviar apenas o Plano de Negócios: a entrega exige o download completo do repositório atualizado.
 
 ## Segurança
 
-Não envie configurações reais contendo senhas, chaves, comunidades SNMP, endereços sensíveis ou informações de clientes. Todo arquivo utilizado em testes deverá passar por anonimização.
+Não publique configurações reais com senhas, chaves, comunidades SNMP ou informações sensíveis de clientes. Utilize dados sintéticos ou explicitamente autorizados e anonimizados. Nenhuma recomendação será implantada sem análise de impacto, aprovação, backup e plano de retorno.
