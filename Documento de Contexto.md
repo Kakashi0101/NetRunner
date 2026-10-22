@@ -1,6 +1,6 @@
 # Documento de Contexto: Netrunner OT
 
-Atualização acadêmica: 01/10/2026. Documento alinhado ao [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md). A solução está em planejamento, sem implementação funcional neste repositório.
+Atualização acadêmica: 21/10/2026. Documento alinhado ao [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md). A Etapa 3 inclui implementação local inicial de cadastro, análise por seis regras, revisão e relatório. O escopo completo permanece em evolução; consulte a [Arquitetura do Sistema](Arquitetura%20do%20Sistema.md).
 
 ## 1. Introdução
 
@@ -228,3 +228,7 @@ Tornar a Netrunner OT uma plataforma de referência em diagnóstico e melhoria c
 O grupo deverá entrevistar potenciais compradores e executar pilotos com dados sintéticos ou autorizados para medir tempo de revisão, retrabalho, custo de processamento e disposição a pagar. Configuração estática não comprova condições em tempo real, como latência, utilização, disponibilidade de backups ou estado físico dos enlaces. Ausência de evidência será registrada como informação insuficiente, sem afirmar que o equipamento apresenta uma falha operacional.
 
 O cenário Lean mantém a exigência de proteção de dados e revisão humana. O cenário ideal amplia capacidade e recursos de operação, sem mudar os limites de responsabilidade do serviço. White-label, API, múltiplos fabricantes e cobrança integrada continuam como possibilidades futuras, fora da receita projetada nesta entrega.
+
+## 14. Evolução na Etapa 3
+
+Foi iniciada uma aplicação Flask/SQLite com telas renderizadas no servidor e persistência. O consultor pode cadastrar cliente/ambiente, enviar configuração sintética, revisar achados e liberar relatório. Não há integração com IA, portal de cliente, controle automático de franquias ou aplicação de comandos. Os documentos de [interface](Projeto%20de%20Interface.md), [template](Template.md), [SWOT](An%C3%A1lise%20de%20Ambientes%20%28SWOT%29.md) e as [planilhas](planilhas/README.md) complementam o planejamento. A participação individual da equipe precisa ser demonstrada por alterações reais e PRs.

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}<p class="intro">Envie uma configuração para iniciar a revisão técnica.</p>
+<div class="split">
+<form class="panel" method="post" enctype="multipart/form-data">
+<h2>Configuração do equipamento</h2>
+<input type="hidden" name="csrf" value="{{ csrf_token() }}">{% if clients %}<label for="client_id">Cliente e ambiente</label>
+<select id="client_id" name="client_id" required>{% for client in clients %}<option value="{{ client.id }}">{{ client.name }} — {{ client.environment }}</option>{% endfor %}</select>
+<label for="config_file">Arquivo de configuração</label>
+<div class="file-zone">
+<input id="config_file" name="config_file" type="file" accept=".txt,.cfg" required>
+<p>Texto UTF-8 · .txt ou .cfg · até 256 KB</p>
+</div>
+<label class="checkbox">
+<input type="checkbox" name="authorized" value="yes" required>Confirmo que os dados são sintéticos ou autorizados e foram anonimizados.</label>
+<button type="submit">Analisar configuração</button>{% else %}<p>Cadastre um cliente antes de enviar uma configuração.</p>
+<a class="button" href="{{ url_for('clients') }}">Cadastrar cliente</a>{% endif %}</form>
+<section class="guidance">
+<p class="eyebrow">COMO FUNCIONA</p>
+<h2>Da configuração<br>à recomendação</h2>
+<ol>
+<li>
+<strong>Extração</strong>
+<p>Hostname, interfaces, VLANs e versão informada.</p>
+</li>
+<li>
+<strong>Verificação</strong>
+<p>Seis regras determinísticas com evidências rastreáveis.</p>
+</li>
+<li>
+<strong>Revisão</strong>
+<p>Você confirma ou descarta cada achado antes da liberação.</p>
+</li>
+</ol>
+<p class="notice">O arquivo bruto não é armazenado. O detector cobre padrões conhecidos e não substitui a anonimização manual.</p>
+</section>
+</div>
+{% endblock %}

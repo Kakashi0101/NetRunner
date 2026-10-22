@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block action %}<a class="button" href="{{ url_for('new_analysis') }}">+ Nova análise</a>
+{% endblock %}
+{% block content %}<p class="intro">Acompanhe os diagnósticos e as revisões dos seus ambientes.</p>
+<div class="metrics">
+<div>
+<span>Clientes cadastrados</span>
+<strong>{{ clients }}</strong>
+</div>
+<div>
+<span>Análises realizadas</span>
+<strong>{{ runs|length }}</strong>
+</div>
+<div>
+<span>Em revisão</span>
+<strong>{{ runs|selectattr('status','equalto','Em revisão')|list|length }}</strong>
+</div>
+<div>
+<span>Relatórios liberados</span>
+<strong>{{ runs|selectattr('status','equalto','Liberado')|list|length }}</strong>
+</div>
+</div>
+<section class="panel">
+<div class="section-heading">
+<h2>Diagnósticos recentes</h2>
+<span class="muted">Histórico persistido</span>
+</div>{% if runs %}<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Equipamento</th>
+<th>Cliente</th>
+<th>Data (UTC)</th>
+<th>Status</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>{% for run in runs %}<tr>
+<td>
+<strong>{{ run.hostname }}</strong>
+<small>#{{ run.id }}</small>
+</td>
+<td>{{ run.client_name }}</td>
+<td>{{ run.created_at }}</td>
+<td>
+<span class="badge">{{ run.status }}</span>
+</td>
+<td>
+<a href="{{ url_for('analysis', analysis_id=run.id) }}">Abrir análise →</a>
+</td>
+</tr>{% endfor %}</tbody>
+</table>
+</div>{% else %}<div class="empty">
+<h3>Seu primeiro diagnóstico começa aqui</h3>
+<p>Cadastre um cliente e envie uma configuração sintética ou anonimizada.</p>
+<a href="{{ url_for('clients') }}">Cadastrar cliente →</a>
+</div>{% endif %}</section>
+{% endblock %}

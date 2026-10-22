@@ -10,7 +10,7 @@ O modelo comercial combina assinatura mensal com franquia de equipamentos e revi
 
 O cenário **Lean** utiliza operação remota, desenvolvimento contratado em pequena escala e revisão técnica sob demanda. O cenário **ideal** amplia desenvolvimento, segurança, capacidade comercial e rede de consultores. A recomendação é iniciar pelo Lean e ampliar a estrutura somente após comprovar demanda, retenção e capacidade de entrega.
 
-> Todos os preços, volumes, horas, taxas comerciais e orçamentos deste plano são **estimativas acadêmicas propostas**, não cotações, contratos ou resultados observados. O repositório contém documentação, sem aplicação implementada. Os cenários representam operação estabilizada, não o primeiro mês de vendas. A referência fiscal é 2026; o horizonte não constitui uma projeção fiscal para 2027.
+> Todos os preços, volumes, horas, taxas comerciais e orçamentos deste plano são **estimativas acadêmicas propostas**, não cotações, contratos ou resultados observados. Na data-base deste plano, o repositório continha documentação; na Etapa 3 foi adicionada uma implementação inicial local, descrita na arquitetura. Os cenários representam operação estabilizada, não o primeiro mês de vendas. A referência fiscal é 2026; o horizonte não constitui uma projeção fiscal para 2027.
 
 ## 2. Problema, público e proposta de valor
 
@@ -248,7 +248,7 @@ Passar ao ideal exige ao menos três meses de medição operacional, contratos c
 | Operação Lean | Contratos com franquias, cobrança e acompanhamento mensal |
 | Expansão ideal | Capacidade e demanda comprovadas antes de contratar estrutura |
 
-Ver [Documento de Contexto](Documento%20de%20Contexto.md) e [Especificação do Projeto](Especifica%C3%A7%C3%A3o%20do%20Projeto.md). Nenhuma fase de software é apresentada como concluída nesta entrega documental.
+Ver [Documento de Contexto](Documento%20de%20Contexto.md) e [Especificação do Projeto](Especifica%C3%A7%C3%A3o%20do%20Projeto.md). O plano mantém suas hipóteses originais. Na Etapa 3, iniciou-se a implementação local; o escopo completo do MVP permanece pendente.
 
 ## 11. Referências e memória de cálculo
 
@@ -266,3 +266,7 @@ python scripts/calcular_cenarios.py
 ```
 
 O cálculo usa precisão integral e arredonda apenas a apresentação. Tributos exibidos pelo script são projeções gerenciais, não guias de recolhimento.
+
+## 12. Complemento da Etapa 3
+
+O [fluxo de caixa](planilhas/Fluxo_de_Caixa.xlsx) acrescenta rampa de aquisição e prazos de recebimento/pagamento em horizonte relativo de 12 meses. Preserva preços e custos-base, mas usa reserva tributária conservadora editável em vez de reproduzir o DAS efetivo do cenário estabilizado. Assim, seus resultados não devem ser comparados como se fossem a mesma base de cálculo. O [guia das planilhas](planilhas/README.md) descreve a reconciliação e as novas hipóteses. A [SWOT](An%C3%A1lise%20de%20Ambientes%20%28SWOT%29.md) orienta as iniciativas do [Balanced Scorecard](planilhas/Balanced_Scorecard.xlsx).
