@@ -1,6 +1,6 @@
 # Especificação do Projeto: Netrunner OT
 
-Atualização acadêmica: 01/10/2026. Requisitos planejados, sem aplicação implementada neste repositório. Referência comercial: [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md).
+Atualização acadêmica: 21/10/2026. Requisitos de produto com implementação inicial parcial na Etapa 3. Referência comercial: [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md).
 
 ## 1. Visão geral
 
@@ -281,3 +281,19 @@ Esses critérios são metas de validação, não testes executados. O piloto dev
 - Revisor disponível dentro da capacidade contratada.
 - Validação de custos, preços e enquadramento tributário antes da comercialização.
 - Backup e recuperação testados antes de receber configurações de clientes.
+
+## 19. Situação de implementação da Etapa 3
+
+| Capacidade | Situação atual |
+|---|---|
+| Autenticação e cadastro de cliente/ambiente | Implementados para consultor local |
+| Upload e validação | Implementados com limite e bloqueio de padrões sensíveis conhecidos |
+| Parser e regras | Extração parcial e seis regras; meta de 20 ainda pendente |
+| Revisão, auditoria e liberação | Implementadas, com revogação após mudança de decisão |
+| Relatório e persistência | HTML persistido por dados; impressão pelo navegador |
+| Isolamento | Implementado por proprietário da conta; compartilhamento entre consultores pendente |
+| Exclusão | Base ativa; retenção automática e eliminação de backups pendentes |
+| Criptografia em repouso e operação externa | Não implementadas nesta versão local |
+| IA, comparação, horas e portal do cliente | Planejados, sem implementação |
+
+Os requisitos anteriores continuam como metas de produto, não como declaração de conformidade integral. Ver [Arquitetura do Sistema](Arquitetura%20do%20Sistema.md), [Projeto de Interface](Projeto%20de%20Interface.md) e [validação](docs/VALIDACAO.md).

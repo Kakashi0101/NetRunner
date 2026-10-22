@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}<div class="login-layout">
+<section>
+<h2>Clareza para decidir.<br>Controle para mudar.</h2>
+<p>Organize configurações, revise evidências e transforme achados em recomendações para sua rede industrial.</p>
+<div class="process">
+<span>01 · Configuração</span>
+<span>02 · Análise técnica</span>
+<span>03 · Revisão humana</span>
+</div>
+</section>
+<form class="panel" method="post">
+<h2>Acesso do consultor</h2>
+<p class="muted">Entre com sua conta local para continuar.</p>
+<input type="hidden" name="csrf" value="{{ csrf_token() }}">
+<label for="email">E-mail</label>
+<input id="email" name="email" type="email" autocomplete="username" required>
+<label for="password">Senha</label>
+<input id="password" name="password" type="password" autocomplete="current-password" required>
+<button type="submit">Entrar no workspace</button>
+</form>
+</div>
+{% endblock %}

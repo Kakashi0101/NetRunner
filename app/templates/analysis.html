@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block action %}{% if analysis.status=='Liberado' %}<a class="button" href="{{ url_for('report', analysis_id=analysis.id) }}">Abrir relatório</a>{% endif %}
+{% endblock %}
+{% block content %}<p class="intro">{{ analysis.hostname }} · {{ analysis.client_name }} · {{ analysis.environment }}</p>
+<div class="metrics">
+<div>
+<span>Interfaces identificadas</span>
+<strong>{{ inventory.interfaces|length }}</strong>
+</div>
+<div>
+<span>Achados preliminares</span>
+<strong>{{ findings|length }}</strong>
+</div>
+<div>
+<span>Revisões pendentes</span>
+<strong>{{ pending }}</strong>
+</div>
+<div>
+<span>Status</span>
+<strong class="status-text">{{ analysis.status }}</strong>
+</div>
+</div>
+<p class="notice">Ausência de comando no arquivo significa informação a confirmar. A análise não mede latência, disponibilidade ou estado físico.</p>
+{% for f in findings %}<article class="panel finding">
+<div class="section-heading">
+<div>
+<small>{{ f.rule_id }}</small>
+<h2>{{ f.title }}</h2>
+</div>
+<span class="badge {% if f.severity=='Alta' %}high{% endif %}">{{ f.severity }}</span>
+</div>
+<pre>{{ f.evidence }}</pre>
+<p>{{ f.recommendation }}</p>
+<form method="post" action="{{ url_for('review', analysis_id=analysis.id, finding_id=f.id) }}">
+<input type="hidden" name="csrf" value="{{ csrf_token() }}">
+<label for="decision-{{ f.id }}">Decisão · {{ f.decision }}</label>
+<select id="decision-{{ f.id }}" name="decision" required>
+<option value="">Selecione</option>
+<option {% if f.decision=='Confirmado' %}selected{% endif %}>Confirmado</option>
+<option {% if f.decision=='Descartado' %}selected{% endif %}>Descartado</option>
+</select>
+<label for="note-{{ f.id }}">Justificativa técnica</label>
+<textarea id="note-{{ f.id }}" name="note" minlength="5" maxlength="1000" required rows="2">{{ f.note }}</textarea>
+<button type="submit" class="secondary">Salvar revisão</button>
+</form>
+</article>{% else %}<div class="panel">
+<h2>Nenhum achado nas seis regras</h2>
+<p>Isso não comprova que a rede está segura. Confirme a completude da configuração e revise o contexto antes de liberar.</p>
+</div>{% endfor %}
+<form class="panel" method="post" action="{{ url_for('release', analysis_id=analysis.id) }}">
+<h2>Liberação do relatório</h2>
+<input type="hidden" name="csrf" value="{{ csrf_token() }}">
+<label class="checkbox">
+<input type="checkbox" name="reviewed" value="yes" required>Concluí a revisão técnica e conferi as limitações da análise.</label>
+<button type="submit" {% if pending %}disabled{% endif %}>Liberar relatório</button>{% if pending %}<p class="muted">Conclua {{ pending }} revisão(ões) antes de liberar.</p>{% endif %}</form>
+<details class="panel">
+<summary>Histórico de auditoria</summary>{% for event in events %}<p>
+<small>{{ event.created_at }} UTC · {{ event.email }}</small>
+<br>{{ event.action }}</p>{% endfor %}</details>
+<details class="panel">
+<summary>Excluir análise</summary>
+<p>Remove os dados da base ativa. Cópias de backup devem ser tratadas separadamente.</p>
+<form method="post" action="{{ url_for('delete_analysis', analysis_id=analysis.id) }}">
+<input type="hidden" name="csrf" value="{{ csrf_token() }}">
+<label for="confirmation">Digite EXCLUIR</label>
+<input id="confirmation" name="confirmation" required>
+<button class="danger" type="submit">Excluir análise</button>
+</form>
+</details>
+{% endblock %}
