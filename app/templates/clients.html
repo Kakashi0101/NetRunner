@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}<p class="intro">Cada cadastro associa um cliente a um ambiente de rede.</p>
+<div class="split">
+<section class="panel">
+<h2>Ambientes cadastrados</h2>{% if clients %}{% for client in clients %}<div class="client-row">
+<span class="monogram">{{ client.name[0]|upper }}</span>
+<div>
+<h3>{{ client.name }}</h3>
+<p>{{ client.environment }}</p>
+</div>
+</div>{% endfor %}{% else %}<p class="empty">Nenhum cliente cadastrado.</p>{% endif %}</section>
+<form method="post" class="panel">
+<h2>Novo cliente</h2>
+<input type="hidden" name="csrf" value="{{ csrf_token() }}">
+<label for="name">Nome do cliente</label>
+<input id="name" name="name" minlength="2" maxlength="100" required value="{{ request.form.get('name','') }}" placeholder="Ex.: Indústria Demonstração">
+<label for="environment">Ambiente</label>
+<input id="environment" name="environment" minlength="2" maxlength="100" required value="{{ request.form.get('environment','') }}" placeholder="Ex.: Laboratório de redes">
+<button type="submit">Cadastrar cliente</button>
+</form>
+</div>
+{% endblock %}

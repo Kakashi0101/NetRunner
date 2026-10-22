@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block action %}<a href="{{ url_for('analysis', analysis_id=analysis.id) }}">Voltar à revisão</a>
+{% endblock %}
+{% block content %}<article class="panel report">
+<p class="eyebrow">RELATÓRIO #{{ analysis.id }} · REGRAS V1</p>
+<h2>{{ analysis.hostname }}</h2>
+<p>{{ analysis.client_name }} / {{ analysis.environment }}<br>Criado em {{ analysis.created_at }} UTC · {{ analysis.status }}</p>
+<hr>
+<h2>Resumo da revisão</h2>
+<p>{{ findings|selectattr('decision','equalto','Confirmado')|list|length }} achado(s) confirmado(s) e {{ findings|selectattr('decision','equalto','Descartado')|list|length }} descartado(s).</p>{% for f in findings %}<section class="report-finding">
+<h3>{{ f.rule_id }} · {{ f.title }}</h3>
+<p>
+<strong>{{ f.decision }}</strong> · {{ f.severity }}</p>
+<pre>{{ f.evidence }}</pre>
+<p>
+<strong>Revisão:</strong> {{ f.note }}</p>{% if f.decision=='Confirmado' %}<p>
+<strong>Recomendação:</strong> {{ f.recommendation }}</p>{% endif %}</section>{% endfor %}<h2>Condições de uso</h2>
+<p>Análise estática limitada às regras implementadas. Validar topologia, plataforma e dependências antes de qualquer alteração. Preparar backup, aprovação, janela, testes e rollback. Nenhum comando foi executado nos equipamentos.</p>
+<p class="muted">Para salvar uma cópia, use a impressão do navegador e selecione PDF.</p>
+</article>
+{% endblock %}

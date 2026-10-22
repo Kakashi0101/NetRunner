@@ -1,65 +1,91 @@
 # Netrunner OT
 
-A **Netrunner OT** é uma proposta de plataforma web para diagnóstico e melhoria contínua de redes industriais. Combina análise de configurações, regras determinísticas, triagem por inteligência artificial e revisão humana especializada.
+Diagnóstico de configurações de redes industriais com regras rastreáveis e revisão humana. **Etapa 3: implementação inicial funcional, local, em Python/Flask e SQLite.**
 
-> Projeto acadêmico em fase de documentação. O aplicativo ainda não está implementado. Atualização: 01/10/2026.
+O consultor pode entrar, cadastrar cliente/ambiente, enviar uma configuração sintética, executar seis regras, revisar achados e liberar um relatório. Os dados permanecem no banco após reiniciar a aplicação. IA externa, portal do cliente, comparação de versões e o catálogo completo de 20 regras ainda não foram implementados.
 
-## Objetivo
+## Entregas da Etapa 3
 
-Auxiliar equipes de TI/OT e integradores a identificar riscos e organizar recomendações de melhoria em configurações de rede, com evidências, prioridades, testes e plano de retorno.
+| Item | Documento ou evidência |
+|---|---|
+| Projeto de interface | [Projeto de Interface.md](Projeto%20de%20Interface.md) |
+| Template implementado | [Template.md](Template.md) |
+| Arquitetura e stack | [Arquitetura do Sistema.md](Arquitetura%20do%20Sistema.md) |
+| Balanced Scorecard | [Planilha com 12 objetivos, três por perspectiva](planilhas/Balanced_Scorecard.xlsx) |
+| Análise de ambientes | [SWOT](An%C3%A1lise%20de%20Ambientes%20%28SWOT%29.md) |
+| Fluxo de caixa | [Planilha Lean/Ideal com fórmulas](planilhas/Fluxo_de_Caixa.xlsx) e [premissas](planilhas/README.md) |
+| Contribuições individuais | [Registro e pendências](Contribui%C3%A7%C3%B5es%20Individuais.md) |
+| Organização das tarefas | [Kanban versionado](Kanban.md) e [issues](https://github.com/Kakashi0101/NetRunner/issues) |
+| Implementação | [Código](app), [testes](tests/test_app.py) e [validação](docs/VALIDACAO.md) |
 
-## Documentação e entregas
+**Pendência acadêmica:** esta implementação assistida por IA não comprova contribuição de todos os integrantes. Cada pessoa precisa assumir uma tarefa, implementar, testar e registrar seus próprios commits/PRs. A composição do grupo ainda não foi informada.
+
+## Entregas anteriores
 
 - [Documento de Contexto](Documento%20de%20Contexto.md)
 - [Especificação do Projeto](Especifica%C3%A7%C3%A3o%20do%20Projeto.md)
 - [Plano de Negócios](Plano%20de%20Neg%C3%B3cios.md)
-- Lean Canvas, missão, visão e valores: incluídos no Documento de Contexto.
-- [Lean Canvas ilustrado original](lean_canvas_netrunner_ot.png), como referência da concepção inicial. Para escopo e modelo comercial atualizados, consultar os documentos em Markdown.
-- [Memória de cálculo dos cenários](scripts/calcular_cenarios.py)
+- Lean Canvas, missão, visão e valores no Documento de Contexto.
+- [Lean Canvas ilustrado original](lean_canvas_netrunner_ot.png), preservado como referência da concepção inicial.
+- [Memória de cálculo anterior](scripts/calcular_cenarios.py).
 
-O Plano de Negócios apresenta cenários Lean e ideal, investimentos, capital de giro, custos e despesas, enquadramento tributário proposto, precificação, resultado mensal, equilíbrio, CAC, ARPU e LTV. Valores financeiros são hipóteses acadêmicas, não cotações ou resultados de operação. As referências aos materiais de aula estão no próprio plano.
+## Executar no Windows com Git Bash
 
-## Escopo inicial do MVP
-
-1. Cadastro do cliente e do ambiente.
-2. Upload manual de configuração anonimizada.
-3. Extração de informações e aplicação de regras técnicas.
-4. Triagem preliminar por IA.
-5. Revisão dos achados pelo consultor.
-6. Liberação do relatório com recomendações e prioridades.
-7. Planejamento assistido de correções, validação e rollback, mediante contratação.
-
-O MVP não aplicará comandos nos equipamentos, não fará monitoramento em tempo real e não terá integração automática de cobrança. Franquias e horas serão controladas manualmente no piloto.
-
-## Arquivos do repositório
-
-| Arquivo | Finalidade |
-|---|---|
-| `README.md` | Apresentação e acesso às entregas |
-| `Documento de Contexto.md` | Problema, público, solução e modelo de negócio |
-| `Especificação do Projeto.md` | Escopo, requisitos, arquitetura e critérios de aceite |
-| `Plano de Negócios.md` | Cenários financeiros, tributos e precificação |
-| `lean_canvas_netrunner_ot.png` | Ilustração original do Lean Canvas |
-| `scripts/calcular_cenarios.py` | Reprodução das contas em Python 3 |
-
-## Reprodução dos cálculos
-
-Não é necessário instalar dependências externas:
+Pré-requisitos: Python 3.12 instalado e Git. Na pasta deste repositório:
 
 ```bash
-python scripts/calcular_cenarios.py
+python -m venv .venv
+source .venv/Scripts/activate
+python -m pip install -r requirements.txt
+python -m flask --app app create-user seu-email@example.com
+python -m flask --app app run --host 127.0.0.1 --port 5000
 ```
 
-O script simula cenários estabilizados na referência tributária de 2026. Não substitui apuração contábil e não implementa o aplicativo Netrunner OT.
+Use seu e-mail no comando de criação. A senha será solicitada sem eco e precisa ter pelo menos 12 caracteres. Não existe senha padrão. Se `python` não for reconhecido, tente `py -3.12` para criar o ambiente.
 
-## Conferência e envio ao Canvas
+Abra **http://127.0.0.1:5000**. No Linux/macOS, a ativação do ambiente é `source .venv/bin/activate`; os demais comandos são iguais.
 
-1. Conferir os três documentos e os links acima na versão publicada do repositório.
-2. No GitHub, acessar **Code → Download ZIP** após a atualização.
-3. Enviar o ZIP completo à atividade correspondente no Canvas, conforme o enunciado.
+## Demonstrar a funcionalidade
 
-Não enviar apenas o Plano de Negócios: a entrega exige o download completo do repositório atualizado.
+1. Entre com o usuário criado.
+2. Em **Clientes e ambientes**, cadastre um cliente de demonstração.
+3. Em **Nova análise**, envie [switch_sintetico.cfg](examples/switch_sintetico.cfg) e confirme a autorização.
+4. O backend cria seis achados. Confirme ou descarte cada um com justificativa.
+5. Confirme a revisão final e clique em **Liberar relatório**.
+6. Use a impressão do navegador para salvar em PDF, se necessário.
 
-## Segurança
+Uma nova edição em um achado retorna a análise para revisão e bloqueia o relatório até nova liberação. A exclusão exige digitar EXCLUIR. O arquivo bruto não é armazenado; o inventário e as evidências ficam no SQLite.
 
-Não publique configurações reais com senhas, chaves, comunidades SNMP ou informações sensíveis de clientes. Utilize dados sintéticos ou explicitamente autorizados e anonimizados. Nenhuma recomendação será implantada sem análise de impacto, aprovação, backup e plano de retorno.
+## Testes
+
+Com o ambiente virtual ativado:
+
+```bash
+python -m pip install -r requirements-dev.txt
+python -m pytest -q
+```
+
+Resultado da validação inicial: **16 testes aprovados**. A suíte cobre regras, persistência, autenticação, CSRF, isolamento e revisão/liberação. Há workflow em [.github/workflows/tests.yml](.github/workflows/tests.yml). O status de execução do GitHub Actions deve ser consultado no repositório; sucesso local não significa automaticamente sucesso no CI.
+
+A revisão visual em navegador, no Windows e com leitores de tela precisa ser concluída pelo grupo. Consulte [VALIDACAO.md](docs/VALIDACAO.md) antes de declarar esses testes executados.
+
+## Organização
+
+| Local | Conteúdo |
+|---|---|
+| `app/` | Backend, regras, esquema, templates e CSS |
+| `tests/` | Testes automatizados |
+| `examples/` | Configuração sintética para demonstração |
+| `planilhas/` | Balanced Scorecard, fluxo de caixa e instruções |
+| `docs/` | Validação e espaço para evidências reais |
+| `instance/` | Banco e chave locais, gerados e ignorados pelo Git |
+
+Use `feature/<tema>` para trabalho individual, PR para `develop` e PR de entrega para `main`. A política de revisão está no [Kanban](Kanban.md).
+
+## Limites desta versão
+
+A aplicação é uma base acadêmica local. Não possui rate limiting, papéis completos, criptografia de aplicação no banco, retenção automática ou backup gerenciado. O parser é parcial e não certifica a saúde da rede. Use dados sintéticos até concluir os controles da [issue de segurança](https://github.com/Kakashi0101/NetRunner/issues/5). Não exponha o servidor de desenvolvimento diretamente à internet.
+
+## Entrega no Canvas
+
+Após revisão do grupo e integração das contribuições, confirme os documentos na branch `main`, use **Code → Download ZIP** e envie o repositório completo ao Canvas. O ZIP não substitui a avaliação do histórico de commits e do Kanban no GitHub.

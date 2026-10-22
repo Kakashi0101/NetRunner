@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{{ title }} · Netrunner OT</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para conteúdo</a>
+<aside class="sidebar">
+<a class="brand" href="{{ url_for('dashboard') }}">
+<span class="brand-mark">N</span>netrunner<span class="ot">OT</span>
+</a>
+<p class="nav-label">ESPAÇO DE TRABALHO</p>
+<nav aria-label="Navegação principal">
+<a href="{{ url_for('dashboard') }}" {% if request.endpoint=='dashboard' %}aria-current="page"{% endif %}>Visão geral</a>
+<a href="{{ url_for('clients') }}" {% if request.endpoint=='clients' %}aria-current="page"{% endif %}>Clientes e ambientes</a>
+<a href="{{ url_for('new_analysis') }}" {% if request.endpoint=='new_analysis' %}aria-current="page"{% endif %}>Nova análise</a>
+</nav>
+<div class="sidebar-bottom">
+<span class="status-dot">
+</span> Diagnóstico com revisão humana<p>Etapa 3 · versão local</p>
+</div>
+</aside>
+<div class="workspace">
+<header class="topbar">
+<span>Redes industriais / {{ title }}</span>{% if g.user %}<form method="post" action="{{ url_for('logout') }}">
+<input type="hidden" name="csrf" value="{{ csrf_token() }}">
+<span>{{ g.user.email }}</span> <button class="quiet" type="submit">Sair</button>
+</form>{% else %}<span>Área do consultor</span>{% endif %}</header>
+<main id="conteudo">
+<div class="page-heading">
+<div>
+<p class="eyebrow">NETRUNNER OT</p>
+<h1>{{ title }}</h1>
+</div>
+{% block action %}
+{% endblock %}</div>
+{% for category,message in get_flashed_messages(with_categories=true) %}<div class="notice {{ category }}" role="alert">{{ message }}</div>{% endfor %}
+
+{% block content %}
+{% endblock %}</main>
+<footer>Análise de configurações estáticas. Toda mudança exige validação e aprovação.</footer>
+</div>
+</body>
+</html>
