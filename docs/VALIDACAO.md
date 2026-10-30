@@ -13,9 +13,9 @@ Data: 21/10/2026. Ambiente de teste: Python 3.12 em Linux, Flask 3.1.2 e pytest 
 
 ## Limitações da validação
 
-Os testes HTTP renderizam os templates, mas não substituem teste visual/interativo em um navegador. A tentativa de instalar o navegador de automação não produziu um executável utilizável neste ambiente. Portanto, não se declara validação visual de desktop/mobile nem acessibilidade com leitor de tela. O grupo deve concluir essa conferência na [issue 1](https://github.com/Kakashi0101/NetRunner/issues/1) e na [issue 4](https://github.com/Kakashi0101/NetRunner/issues/4).
+Os testes HTTP renderizam os templates, mas não substituem teste visual/interativo em um navegador. A tentativa de instalar o navegador de automação não produziu um executável utilizável neste ambiente. Portanto, não se declara validação visual de desktop/mobile nem acessibilidade com leitor de tela. Essas verificações são acompanhadas na [issue 1](https://github.com/Kakashi0101/NetRunner/issues/1) e na [issue 4](https://github.com/Kakashi0101/NetRunner/issues/4).
 
-Não foram executados testes em equipamentos industriais, dados reais, carga, concorrência elevada, Windows ou Microsoft Excel. A execução local no Windows é descrita no README e ainda depende da conferência pelo grupo.
+Não foram executados testes em equipamentos industriais, dados reais, carga, concorrência elevada, Windows ou Microsoft Excel. O README contém as instruções de execução local no Windows.
 
 ## Roteiro de demonstração manual
 
@@ -30,4 +30,4 @@ Não foram executados testes em equipamentos industriais, dados reais, carga, co
 9. Reduzir a largura da janela e navegar por teclado. Registrar as capturas em `docs/evidencias/`.
 10. Abrir as planilhas no Excel, alterar o cenário e um resultado do BSC, conferindo recálculo.
 
-As capturas do grupo devem mostrar dados sintéticos e a data da execução. Não publicar senhas, bases locais ou configurações reais.
+Os dados de demonstração são sintéticos; senhas, bases locais e configurações reais não fazem parte das evidências públicas.

@@ -4,6 +4,6 @@ Código implementado: [templates](../../app/templates), [CSS](../../app/static/a
 
 Resultado automatizado inicial: 16 testes aprovados. Ver [registro de validação](../VALIDACAO.md).
 
-Capturas reais da execução em navegador deverão ser adicionadas pelo grupo após seguir o roteiro de demonstração. Não há imagens de protótipo apresentadas como evidência de execução.
+A versão inicial foi [aprovada no GitHub Actions](https://github.com/Kakashi0101/NetRunner/actions/runs/39699944030).
 
-Capturas sugeridas: login, clientes, upload, revisão, relatório, dashboard e layout mobile. Cada integrante deve vincular sua mudança real ao respectivo commit/PR no documento de contribuições.
+Este diretório contém referências ao código e aos testes automatizados. Não contém capturas de execução em navegador. A validação manual é acompanhada na [issue #1](https://github.com/Kakashi0101/NetRunner/issues/1).

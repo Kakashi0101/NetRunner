@@ -14,11 +14,11 @@ O consultor pode entrar, cadastrar cliente/ambiente, enviar uma configuração s
 | Balanced Scorecard | [Planilha com 12 objetivos, três por perspectiva](planilhas/Balanced_Scorecard.xlsx) |
 | Análise de ambientes | [SWOT](An%C3%A1lise%20de%20Ambientes%20%28SWOT%29.md) |
 | Fluxo de caixa | [Planilha Lean/Ideal com fórmulas](planilhas/Fluxo_de_Caixa.xlsx) e [premissas](planilhas/README.md) |
-| Contribuições individuais | [Registro e pendências](Contribui%C3%A7%C3%B5es%20Individuais.md) |
+| Contribuições individuais | [Registro de contribuições](Contribui%C3%A7%C3%B5es%20Individuais.md) |
 | Organização das tarefas | [Kanban versionado](Kanban.md) e [issues](https://github.com/Kakashi0101/NetRunner/issues) |
 | Implementação | [Código](app), [testes](tests/test_app.py) e [validação](docs/VALIDACAO.md) |
 
-**Pendência acadêmica:** esta implementação assistida por IA não comprova contribuição de todos os integrantes. Cada pessoa precisa assumir uma tarefa, implementar, testar e registrar seus próprios commits/PRs. A composição do grupo ainda não foi informada.
+A autoria e as evidências de participação estão no [registro de contribuições](Contribui%C3%A7%C3%B5es%20Individuais.md).
 
 ## Entregas anteriores
 
@@ -65,9 +65,9 @@ python -m pip install -r requirements-dev.txt
 python -m pytest -q
 ```
 
-Resultado da validação inicial: **16 testes aprovados**. A suíte cobre regras, persistência, autenticação, CSRF, isolamento e revisão/liberação. Há workflow em [.github/workflows/tests.yml](.github/workflows/tests.yml). O status de execução do GitHub Actions deve ser consultado no repositório; sucesso local não significa automaticamente sucesso no CI.
+Resultado da validação inicial: **16 testes aprovados**. A suíte cobre regras, persistência, autenticação, CSRF, isolamento e revisão/liberação. Há workflow em [.github/workflows/tests.yml](.github/workflows/tests.yml). A execução da versão inicial na `main` também foi [aprovada no GitHub Actions](https://github.com/Kakashi0101/NetRunner/actions/runs/39699944030).
 
-A revisão visual em navegador, no Windows e com leitores de tela precisa ser concluída pelo grupo. Consulte [VALIDACAO.md](docs/VALIDACAO.md) antes de declarar esses testes executados.
+A validação visual em navegador, no Windows e com leitores de tela ainda não possui evidências registradas. O escopo dos testes está em [VALIDACAO.md](docs/VALIDACAO.md).
 
 ## Organização
 
@@ -77,7 +77,7 @@ A revisão visual em navegador, no Windows e com leitores de tela precisa ser co
 | `tests/` | Testes automatizados |
 | `examples/` | Configuração sintética para demonstração |
 | `planilhas/` | Balanced Scorecard, fluxo de caixa e instruções |
-| `docs/` | Validação e espaço para evidências reais |
+| `docs/` | Validação e referências de evidências |
 | `instance/` | Banco e chave locais, gerados e ignorados pelo Git |
 
 Use `feature/<tema>` para trabalho individual, PR para `develop` e PR de entrega para `main`. A política de revisão está no [Kanban](Kanban.md).
@@ -86,6 +86,3 @@ Use `feature/<tema>` para trabalho individual, PR para `develop` e PR de entrega
 
 A aplicação é uma base acadêmica local. Não possui rate limiting, papéis completos, criptografia de aplicação no banco, retenção automática ou backup gerenciado. O parser é parcial e não certifica a saúde da rede. Use dados sintéticos até concluir os controles da [issue de segurança](https://github.com/Kakashi0101/NetRunner/issues/5). Não exponha o servidor de desenvolvimento diretamente à internet.
 
-## Entrega no Canvas
-
-Após revisão do grupo e integração das contribuições, confirme os documentos na branch `main`, use **Code → Download ZIP** e envie o repositório completo ao Canvas. O ZIP não substitui a avaliação do histórico de commits e do Kanban no GitHub.

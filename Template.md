@@ -2,9 +2,9 @@
 
 Etapa 3 · 21/10/2026.
 
-## 1. Interpretação adotada
+## 1. Escopo
 
-Como o enunciado solicita `Template.md` junto do projeto de interface, este documento descreve o template visual implementado e a estrutura para novas telas. Caso exista um modelo institucional adicional, o grupo deverá compatibilizá-lo com esta documentação.
+Este documento descreve a identidade visual, o template base e os componentes utilizados nas telas implementadas da aplicação.
 
 ## 2. Identidade visual
 
@@ -24,6 +24,8 @@ O nome Netrunner OT e a marca tipográfica são montados em HTML/CSS. Não há d
 
 O arquivo [base.html](app/templates/base.html) contém título da página, navegação, sessão do usuário, mensagens e rodapé. Cada tela estende esse template e preenche os blocos `action` e `content`.
 
+Exemplo funcional do indicador de clientes, com a variável `clients` fornecida pela rota do dashboard:
+
 ```html
 {% extends 'base.html' %}
 {% block action %}
@@ -31,8 +33,8 @@ O arquivo [base.html](app/templates/base.html) contém título da página, naveg
 {% endblock %}
 {% block content %}
 <section class="panel">
-  <h2>Conteúdo da tela</h2>
-  <p>Dados reais fornecidos pela rota Flask.</p>
+  <h2>Clientes cadastrados</h2>
+  <strong>{{ clients }}</strong>
 </section>
 {% endblock %}
 ```

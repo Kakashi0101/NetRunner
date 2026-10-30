@@ -1,26 +1,15 @@
 # Contribuições Individuais — Etapa 3
 
-## Situação comprovada
+## Registro de autoria
 
-O histórico anterior à Etapa 3, até o commit [3579a98](https://github.com/Kakashi0101/NetRunner/commit/3579a984c278d7070a47e154b27810f4c80a2c46), contém autoria associada a `Kakashi0101`, com variações do nome de Elson nos metadados Git. Esse histórico comprova publicação e documentação anteriores, não a implementação de telas por todos os integrantes.
+O histórico da branch `main`, consultado em 29/10/2026, contém commits associados à conta `Kakashi0101`. Os metadados apresentam variações do nome de Elson José de Oliveira Junior.
 
-A implementação inicial da Etapa 3 foi produzida com assistência de IA a pedido do usuário. Os commits de publicação não devem ser usados para afirmar que outros integrantes implementaram o código. A revisão, compreensão e contribuições individuais reais do grupo ainda precisam ser registradas.
+| Integrante | GitHub | Contribuição registrada | Evidências |
+|---|---|---|---|
+| Elson José de Oliveira Junior | [Kakashi0101](https://github.com/Kakashi0101) | Documentação e publicação das etapas anteriores; publicação da implementação inicial e dos documentos da Etapa 3, produzidos com assistência de IA | [Documentação anterior](https://github.com/Kakashi0101/NetRunner/commit/3579a984c278d7070a47e154b27810f4c80a2c46), [implementação inicial](https://github.com/Kakashi0101/NetRunner/commit/a2eb6fc2a402330cabf8caff6f49f6de42b5f82e), [PR #7](https://github.com/Kakashi0101/NetRunner/pull/7) e [PR #8](https://github.com/Kakashi0101/NetRunner/pull/8) |
 
-## Registro a completar com evidências
+## Abrangência das evidências
 
-| Integrante | GitHub | Contribuição verificável | Issue | Commit/PR | Situação |
-|---|---|---|---|---|---|
-| Elson Oliveira | Kakashi0101 | Documentação/publicação anteriores; solicitação da implementação assistida | [#1](https://github.com/Kakashi0101/NetRunner/issues/1) | [3579a98](https://github.com/Kakashi0101/NetRunner/commit/3579a984c278d7070a47e154b27810f4c80a2c46) | Revisão individual da Etapa 3 a registrar |
-| Demais integrantes | A informar | Não informada | [#4](https://github.com/Kakashi0101/NetRunner/issues/4) | A preencher após contribuição real | Pendente |
+A implementação inicial foi produzida com assistência de IA. O histórico comprova sua publicação pela conta identificada, mas não demonstra contribuição individual de todos os integrantes na implementação das telas. Não há registros de outros autores na branch consultada.
 
-## Como comprovar a participação
-
-1. Escolher uma issue de implementação, com alteração concreta em tela e comportamento.
-2. Configurar nome e e-mail próprios no Git; não alterar a autoria de trabalho de outra pessoa.
-3. Criar branch a partir de `develop`, implementar, testar e fazer commits próprios.
-4. Abrir PR com problema, solução, testes e evidência visual.
-5. Solicitar revisão de outro integrante e registrar os links nesta tabela.
-
-Exemplos de contribuições possíveis: busca/edição de clientes; filtro de análises por status; melhoria acessível da revisão; tratamento de erros de upload; novas regras acompanhadas de apresentação na interface. Uma divisão é proposta de trabalho, não evidência de execução.
-
-**Pendência para o critério acadêmico:** a entrega ainda não comprova que todos contribuíram na implementação das telas. É necessário informar a composição da equipe e concluir mudanças reais por integrante antes de declarar esse item atendido.
+O acompanhamento desse critério está na [issue #4](https://github.com/Kakashi0101/NetRunner/issues/4). A organização das tarefas e o fluxo de branches estão no [Kanban](Kanban.md).
