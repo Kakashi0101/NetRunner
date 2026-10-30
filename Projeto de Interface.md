@@ -68,4 +68,4 @@ Arquivos: [templates](app/templates), [CSS](app/static/app.css), [backend](app/_
 
 ## 7. Evidências
 
-As capturas e resultados da execução estão em [docs/evidencias](docs/evidencias). Dados de demonstração são sintéticos. O procedimento reproduzível está no [README](README.md).
+As referências ao código e aos resultados automatizados estão em [docs/evidencias](docs/evidencias). Capturas de execução em navegador não estão disponíveis nesta versão. Dados de demonstração são sintéticos. O procedimento reproduzível está no [README](README.md).

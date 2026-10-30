@@ -35,4 +35,4 @@ Etapa 3 · 21/10/2026. Avaliação qualitativa derivada do escopo técnico e das
 
 Prioridade imediata: completar participação individual e validar a execução do MVP. Prioridade técnica seguinte: regras, qualidade e segurança. Prioridade comercial: entrevistas e custos medidos, antes de assumir a carteira do cenário ideal.
 
-As ações estão no [Kanban](Kanban.md), com critérios de aceite nas issues. Revisão proposta da SWOT: ao fim de cada piloto ou quando uma hipótese comercial/tecnológica mudar. Responsáveis individuais serão definidos pelo grupo; os papéis propostos constam no [Balanced Scorecard](planilhas/Balanced_Scorecard.xlsx).
+As ações estão no [Kanban](Kanban.md), com critérios de aceite nas issues. Revisão proposta da SWOT: ao fim de cada piloto ou quando uma hipótese comercial/tecnológica mudar. As funções responsáveis pelas iniciativas constam no [Balanced Scorecard](planilhas/Balanced_Scorecard.xlsx), sem atribuição nominal.
