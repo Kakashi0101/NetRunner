@@ -18,7 +18,7 @@ O consultor pode entrar, cadastrar cliente/ambiente, enviar uma configuração s
 | Organização das tarefas | [Kanban versionado](Kanban.md) e [issues](https://github.com/Kakashi0101/NetRunner/issues) |
 | Implementação | [Código](app), [testes](tests/test_app.py) e [validação](docs/VALIDACAO.md) |
 
-A autoria e as evidências de participação estão no [registro de contribuições](Contribui%C3%A7%C3%B5es%20Individuais.md).
+**Projeto individual:** realizado exclusivamente por **Elson José de Oliveira Junior (`Kakashi0101`)**, único integrante e responsável pelo desenvolvimento e pela documentação. A implementação conta com assistência de IA. As evidências estão no [registro de contribuições](Contribui%C3%A7%C3%B5es%20Individuais.md).
 
 ## Entregas anteriores
 

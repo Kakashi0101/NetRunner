@@ -1,5 +1,9 @@
 # Contribuições Individuais — Etapa 3
 
+## Responsável pelo projeto
+
+O NetRunner é um projeto individual, realizado exclusivamente por **Elson José de Oliveira Junior**, identificado no GitHub como **`Kakashi0101`**. Não há outros integrantes. Essa composição foi confirmada pelo responsável em 29/10/2026.
+
 ## Registro de autoria
 
 O histórico da branch `main`, consultado em 29/10/2026, contém commits associados à conta `Kakashi0101`. Os metadados apresentam variações do nome de Elson José de Oliveira Junior.
@@ -10,6 +14,6 @@ O histórico da branch `main`, consultado em 29/10/2026, contém commits associa
 
 ## Abrangência das evidências
 
-A implementação inicial foi produzida com assistência de IA. O histórico comprova sua publicação pela conta identificada, mas não demonstra contribuição individual de todos os integrantes na implementação das telas. Não há registros de outros autores na branch consultada.
+A implementação inicial foi produzida com assistência de IA, sob responsabilidade de `Kakashi0101`. A concentração dos commits nessa conta corresponde à composição individual do projeto e não constitui pendência de participação de outros integrantes.
 
-O acompanhamento desse critério está na [issue #4](https://github.com/Kakashi0101/NetRunner/issues/4). A organização das tarefas e o fluxo de branches estão no [Kanban](Kanban.md).
+A validação de acessibilidade é acompanhada na [issue #4](https://github.com/Kakashi0101/NetRunner/issues/4). A organização das tarefas e o fluxo de branches estão no [Kanban](Kanban.md).

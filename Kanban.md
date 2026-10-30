@@ -4,21 +4,21 @@ Atualizado em 29/10/2026. Quadro versionado em Markdown e vinculado às issues d
 
 | A fazer | Em andamento | Em revisão | Concluído nesta implementação |
 |---|---|---|---|
-| [#2 Busca e edição de clientes](https://github.com/Kakashi0101/NetRunner/issues/2) | Sem tarefa atribuída | Sem PR aberto | Telas de login, dashboard, clientes, upload, revisão e relatório |
+| [#2 Busca e edição de clientes](https://github.com/Kakashi0101/NetRunner/issues/2) | Nenhuma tarefa em execução registrada | Sem PR aberto | Telas de login, dashboard, clientes, upload, revisão e relatório |
 | [#3 Catálogo de 20 regras](https://github.com/Kakashi0101/NetRunner/issues/3) | | | Backend, banco e seis regras |
-| [#4 Acessibilidade e contribuições](https://github.com/Kakashi0101/NetRunner/issues/4) | | | Testes automatizados iniciais |
+| [#4 Validação de acessibilidade](https://github.com/Kakashi0101/NetRunner/issues/4) | | | Testes automatizados iniciais |
 | [#5 Segurança para piloto](https://github.com/Kakashi0101/NetRunner/issues/5) | | | Documentação de interface, template, arquitetura e SWOT |
 | [#6 Validação financeira e BSC](https://github.com/Kakashi0101/NetRunner/issues/6) | | | Planilhas com fórmulas e hipóteses editáveis |
-| [#1 Validação do grupo e demonstração](https://github.com/Kakashi0101/NetRunner/issues/1) | | | |
+| [#1 Validação e demonstração](https://github.com/Kakashi0101/NetRunner/issues/1) | | | |
 
 ## Política de trabalho
 
 - **A fazer:** issue com escopo e aceite definidos, ainda sem implementação iniciada.
-- **Em andamento:** integrante identificado, branch criada e trabalho real iniciado. Limite proposto de uma tarefa por integrante.
+- **Em andamento:** responsável identificado, branch criada e trabalho real iniciado. Limite de uma tarefa em execução por vez.
 - **Em revisão:** PR aberto, testes executados e evidências anexadas; revisão pendente.
-- **Concluído:** aceite verificado, revisão registrada e alteração integrada. Conclusão técnica assistida por IA não comprova participação de toda a equipe.
+- **Concluído:** aceite verificado, revisão registrada e alteração integrada.
 
-As seis issues abertas estão sem responsáveis atribuídos no GitHub. Cada issue contém escopo, critérios de aceite e uma proposta de branch.
+O projeto é individual. `Kakashi0101` é o único integrante e responsável pelas seis issues abertas. Cada issue contém escopo e critérios de aceite.
 
 ## Branches
 

@@ -9,7 +9,7 @@ Etapa 3 · 21/10/2026. Avaliação qualitativa derivada do escopo técnico e das
 | F1. Escopo voltado à análise de configurações de redes industriais. | W1. Parser inicial parcial e catálogo de somente seis regras. |
 | F2. Evidência rastreável, revisão humana e registro das decisões já implementados. | W2. Dependência de horas de consultoria e de conhecimento especializado. |
 | F3. Fluxo local com dados sintéticos, sem acesso direto aos equipamentos. | W3. Ausência de pilotos comerciais e de disposição a pagar comprovada. |
-| F4. Custos, preços e carteira documentados com premissas editáveis. | W4. Controles para operação externa, papéis e participação de todos os integrantes ainda pendentes. |
+| F4. Custos, preços e carteira documentados com premissas editáveis. | W4. Controles para operação externa e papéis de acesso ainda pendentes; desenvolvimento concentrado em um único responsável. |
 
 | Oportunidades — ambiente externo | Ameaças — ambiente externo |
 |---|---|
@@ -33,6 +33,6 @@ Etapa 3 · 21/10/2026. Avaliação qualitativa derivada do escopo técnico e das
 
 ## 3. Prioridades e acompanhamento
 
-Prioridade imediata: completar participação individual e validar a execução do MVP. Prioridade técnica seguinte: regras, qualidade e segurança. Prioridade comercial: entrevistas e custos medidos, antes de assumir a carteira do cenário ideal.
+Prioridade imediata: validar a execução do MVP pelo responsável `Kakashi0101`. Prioridade técnica seguinte: regras, qualidade e segurança. Prioridade comercial: entrevistas e custos medidos, antes de assumir a carteira do cenário ideal.
 
 As ações estão no [Kanban](Kanban.md), com critérios de aceite nas issues. Revisão proposta da SWOT: ao fim de cada piloto ou quando uma hipótese comercial/tecnológica mudar. As funções responsáveis pelas iniciativas constam no [Balanced Scorecard](planilhas/Balanced_Scorecard.xlsx), sem atribuição nominal.

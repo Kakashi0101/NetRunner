@@ -26,7 +26,7 @@ O valor proposto é reduzir o esforço de revisão e organizar evidências, prio
 | Consultoria pontual | Oferece análise especializada | Histórico recorrente e acompanhamento de ações |
 | Ferramentas de inventário, backup e monitoramento | Acompanham ativos e eventos | Revisão de configuração contextualizada por consultor |
 
-Essa comparação descreve categorias de solução. Não representa pesquisa de preços ou comprovação de superioridade frente a fornecedores. Antes do lançamento, o grupo deverá entrevistar pelo menos cinco potenciais compradores e levantar três propostas comparáveis de mercado, registrando escopo, valor, limites e data. Não foi estimado um tamanho de mercado sem evidência.
+Essa comparação descreve categorias de solução. Não representa pesquisa de preços ou comprovação de superioridade frente a fornecedores. Antes do lançamento, o responsável pelo projeto deverá entrevistar pelo menos cinco potenciais compradores e levantar três propostas comparáveis de mercado, registrando escopo, valor, limites e data. Não foi estimado um tamanho de mercado sem evidência.
 
 ## 3. Operação, canais e receitas
 
@@ -259,7 +259,7 @@ Ver [Documento de Contexto](Documento%20de%20Contexto.md) e [Especificação do 
 - [Lei Complementar 123/2006](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm), art. 18 e Anexo V. Consulta em 01/10/2026.
 - [Receita Federal: opções do Simples Nacional e IBS/CBS para 2027](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/setembro/simples-nacional-2027-entenda-os-novos-prazos-e-faca-sua-escolha-com-consciencia-e-tranquilidade). Consulta em 01/10/2026.
 
-Os materiais de aula são referências fornecidas pelo grupo e não foram republicados neste repositório. Os valores do orçamento foram elaborados para o exercício. O script [calcular_cenarios.py](scripts/calcular_cenarios.py) reproduz as projeções principais sem dependências externas:
+Os materiais de aula são referências fornecidas pelo responsável pelo projeto e não foram republicados neste repositório. Os valores do orçamento foram elaborados para o exercício. O script [calcular_cenarios.py](scripts/calcular_cenarios.py) reproduz as projeções principais sem dependências externas:
 
 ```bash
 python scripts/calcular_cenarios.py
